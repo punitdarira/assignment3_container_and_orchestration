@@ -20,5 +20,9 @@ The name of the service for backend is `webserver`. Used this in nginx.conf to r
 ### 2. Removed network of assignment 2
 I had added both containers in 1 network in assignment 2 to redirect traffic. There was no need to create a network as docker compose creates a defaul network already. 
 
+### 3. Removed port forwarding for webserver
+Since we are using webserver only through the loadbalancer, I've removed the ports section for the webserver in docker compose. 
+
+
 
 
