@@ -1,0 +1,17 @@
+version: '3'
+services:
+  webserver:
+    build:
+      context: ./assignment3-webserver
+      dockerfile: Dockerfile
+    container_name: assignment3_webserver
+
+  loadbalancer:
+    build:
+      context: ./assignment3-loadbalancer
+      dockerfile: Dockerfile
+    container_name: assignment3_loadbalancer
+    ports:
+      - "80:80"
+    depends_on:
+      - webserver
